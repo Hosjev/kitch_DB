@@ -1,0 +1,4 @@
+*.pyc
+__pycache__/
+virt/
+Source/images/

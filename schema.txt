@@ -1,0 +1,48 @@
+Tables (3) booze/non-booze/ingredients (change to other)
+  --these contain names to populate main page
+
+Table be_drinks
+  --contains all drink data
+  uuid   | d_id    | name         | type         | container    | instructions | image        | data | created_at
+ -----------------------------------------------------------------------------------------------------------------
+  uuid   | integer | varchar(255) | varchar(100) | varchar(100) | text         | varchar(255) | json | timestamp
+  
+  uuid UUID NOT NULL PRIMARY KEY,
+  d_id INTEGER NOT NULL,
+  name VARCHAR(100) NOT NULL,
+  type VARCHAR(100) NOT NULL,
+  container VARCHAR(100),
+  instructions TEXT NOT NULL,
+  image VARCHAR(255) NOT NULL,
+  data JSON NOT NULL,
+  timestamp (gen)
+
+
+Queries to perform
+# select all metadata from search pattern
+select * from be_drinks
+  where (data)::jsonb ? ALL(ARRAY['', ''...]);
+
+# image insertion into table
+insert into be_drinks (d_id, name, combos, image) values (17263, 'Highball', '{"coke": "1 oz"}', bytea_import('/home/hosjev/hosted-sites/kitch_database/Source/images/zvsre31572902738.jpg'));
+
+# regular insertion referencing static image name
+insert into be_drinks
+  (uuid, d_id, name, type, container, instructions, image, data, created_at)
+  values (
+    uuid_generate_v4(),
+    17835,
+    'Highball',
+    'Classic',
+    'tumbler',
+    'Mix everything with ice',
+    'zvsre31572902738.jpg',
+    '{"coke": "1 oz"}'),
+    clock_timestamp();
+
+
+# Notes
+1) sanitize data into 3 page tables the SAME as be_drinks
+2) establish steps in process to run them the SAME each month to update database
+3) in the scripts, identify B/NB/Other into groups, then compare updates to db and
+   new ingredients with established groups
