@@ -1,3 +1,4 @@
+POSTGRES
 Tables (3) booze/non-booze/ingredients (change to other)
   --these contain names to populate main page
 
@@ -7,20 +8,23 @@ Table be_drinks
  -----------------------------------------------------------------------------------------------------------------
   uuid   | integer | varchar(255) | varchar(100) | varchar(100) | text         | varchar(255) | json | timestamp
   
-  uuid UUID NOT NULL PRIMARY KEY,
-  d_id INTEGER NOT NULL,
-  name VARCHAR(100) NOT NULL,
-  type VARCHAR(100) NOT NULL,
-  container VARCHAR(100),
-  instructions TEXT NOT NULL,
-  image VARCHAR(255) NOT NULL,
-  data JSON NOT NULL,
-  timestamp (gen)
-
+  uuid uuid NOT NULL PRIMARY KEY,
+  d_id integer NOT NULL,
+  name varchar(100) NOT NULL,
+  type varchar(100) NOT NULL,
+  container varchar(100),
+  instructions text NOT NULL,
+  image varchar(255) NOT NULL,
+  data json NOT NULL,
+  created_at date DEFAULT CURRENT_TIMESTAMP  
 
 Queries to perform
 # select all metadata from search pattern
 select * from be_drinks
+  where (data)::jsonb ? ALL(ARRAY['', ''...]);
+# select data to display for each
+select name, type, instructions, image, data
+  from be_drinks
   where (data)::jsonb ? ALL(ARRAY['', ''...]);
 
 # image insertion into table
@@ -37,9 +41,47 @@ insert into be_drinks
     'tumbler',
     'Mix everything with ice',
     'zvsre31572902738.jpg',
-    '{"coke": "1 oz"}'),
-    clock_timestamp();
+    '{"coke": "1 oz"}');
 
+SQLITE
+# because I'm an idiot and can't figure out Sqlite json objects, the table as such:
+Table be_drinks
+  --contains all drink data
+  id     | d_id    | name         | type         | container    | instructions | image        | ingredients | measurements | created_at
+ -----------------------------------------------------------------------------------------------------------------
+  uuid   | integer | varchar(255) | varchar(100) | varchar(100) | text         | varchar(255) | json        | json         | timestamp
+
+# Create
+CREATE TABLE be_drinks(
+  d_id INTEGER NOT NULL,
+  name VARCHAR(100) NOT NULL,
+  type VARCHAR(100) NOT NULL,
+  container VARCHAR(100),
+  instructions TEXT NOT NULL,
+  image VARCHAR(100) NOT NULL,
+  ingredients JSON NOT NULL,
+  measurements JSON,
+  created_at date)
+
+# Insert
+INSERT INTO be_drinks VALUES(
+  18977,
+  'Martini',
+  'Classic',
+  'Fancy',
+  'Mix all ingreds and pour',
+  'zvsre31572902738.jpg',
+  '["", "", ""]',
+  '["", "", ""]',
+  datetime('now'))
+
+# query to run
+SELECT be_drinks.* FROM be_drinks d, JSON_EACH(ingredients) ing
+  WHERE ing.value IN (item, item...)
+  GROUP BY d.id
+  HAVING COUNT(DISTINCT ing.value) >= (len/number of terms);
+
+  
 
 # Notes
 1) sanitize data into 3 page tables the SAME as be_drinks
