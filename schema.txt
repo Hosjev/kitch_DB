@@ -47,21 +47,20 @@ SQLITE
 # because I'm an idiot and can't figure out Sqlite json objects, the table as such:
 Table be_drinks
   --contains all drink data
-  id     | d_id    | name         | type         | container    | instructions | image        | ingredients | measurements | created_at
+  drink_id    | name         | type         | container    | instructions | image        | ingredients | measurements | created_at
  -----------------------------------------------------------------------------------------------------------------
-  uuid   | integer | varchar(255) | varchar(100) | varchar(100) | text         | varchar(255) | json        | json         | timestamp
+  integer     | varchar(255) | varchar(100) | varchar(100) | text         | varchar(255) | json        | json         | timestamp
 
 # Create
 CREATE TABLE be_drinks(
-  d_id INTEGER NOT NULL,
+  drink_id INTEGER NOT NULL,
   name VARCHAR(100) NOT NULL,
   type VARCHAR(100) NOT NULL,
   container VARCHAR(100),
   instructions TEXT NOT NULL,
   image VARCHAR(100) NOT NULL,
   ingredients JSON NOT NULL,
-  measurements JSON,
-  created_at date)
+  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP);
 
 # Insert
 INSERT INTO be_drinks VALUES(
@@ -71,20 +70,23 @@ INSERT INTO be_drinks VALUES(
   'Fancy',
   'Mix all ingreds and pour',
   'zvsre31572902738.jpg',
-  '["", "", ""]',
-  '["", "", ""]',
-  datetime('now'))
+  '{"gin": "1 oz", "lemon": "slice", "vodka": "1 oz"}');
+
 
 # query to run
-SELECT be_drinks.* FROM be_drinks d, JSON_EACH(ingredients) ing
-  WHERE ing.value IN (item, item...)
-  GROUP BY d.id
-  HAVING COUNT(DISTINCT ing.value) >= (len/number of terms);
+SELECT d.* FROM be_drinks d, JSON_EACH(ingredients) ing
+  WHERE ing.key IN (item, item...)
+  GROUP BY d.drink_id
+  HAVING COUNT(DISTINCT ing.key) >= (len/number of terms);
 
   
 
 # Notes
 1) sanitize data into 3 page tables the SAME as be_drinks
+  a) Capitalize all ingredients by word
+  b) when searching in be_drinks table, turn all to lowercase
+  c) entries made in be_drinks all lowercase (ingredients)
+  d) reverse sanitize these changes when presented on page
 2) establish steps in process to run them the SAME each month to update database
 3) in the scripts, identify B/NB/Other into groups, then compare updates to db and
    new ingredients with established groups
