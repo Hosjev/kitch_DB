@@ -1,5 +1,8 @@
 import asyncio
 import aiohttp
+import sys
+import json
+import os
 
 from aiohttp import ClientSession
 
@@ -54,26 +57,20 @@ class File:
 def main(urls, r):
     obj = AsyncRequest()
     asyncio.run(obj.bulk_crawl(urls, r))
-    print("finish?")
 
 
 if __name__ == "__main__":
     # Args
-    import sys
-    import json
     character = sys.argv[1]
-    result = []
-    # By ID
-    #source = ['https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i=13196']
+
+    # Key from env
+    API_KEY = os.getenv("API_KEY")
 
     # By alpha and arg
-    source = [f'https://www.thecocktaildb.com/api/json/v2/9973533/search.php?f={character}']
+    result = []
+    source = [f'https://www.thecocktaildb.com/api/json/v2/{API_KEY}/search.php?f={character}']
     args = [source, result]
     main(*args)
-    # Write and read file
+    # Write file
     f = File()
     f.write(character, result)
-    contents = f.read(character)
-    for item in contents['drinks']:
-        print(item['idDrink'])
-
