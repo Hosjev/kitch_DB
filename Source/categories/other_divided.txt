@@ -1,0 +1,185 @@
+7-Up, liquid
+Agave Syrup, syrup
+Allspice, spice
+Almond, extra
+Almond Flavoring, extra
+Angelica Root, spice
+Angostura Bitters, bitters
+Anis, spice
+Anise, spice
+Apple, fruit
+Apple Cider, liquid
+Apple Juice, liquid
+Apricot, fruit
+Apricot Nectar, liquid
+Banana, fruit
+Basil, spice
+Berries, fruit
+Bitter Lemon, bitters
+Bitters, bitters
+Black Pepper, spice
+Blackberries, fruit
+Blackcurrant Squash, extra
+Blood Orange, fruit
+Blueberries, fruit
+Brown Sugar, extra
+Butter, extra
+Candy, extra
+Cantaloupe, fruit
+Caramel Coloring, extra
+Caramel Sauce, extra
+Carbonated Soft Drink, liquid
+Carbonated Water, liquid
+Cardamom, spice
+Carrot, extra
+Cayenne Pepper, spice
+Celery Salt, spice
+Cherries, fruit
+Cherry, fruit
+Cherry Juice, liquid
+Chocolate, extra
+Chocolate Ice-Cream, liquid
+Chocolate Milk, liquid
+Chocolate Sauce, extra
+Chocolate Syrup, syrup
+Cinnamon, spice
+Cloves, spice
+Club Soda, liquid
+Coca-Cola, liquid
+Cocoa Powder, extra
+Coconut Milk, liquid
+Coconut Syrup, syrup
+Coffee, extra
+Condensed Milk, liquid
+Coriander, spice
+Corn Syrup, syrup
+Cornstarch, extra
+Cranberries, fruit
+Cranberry Juice, liquid
+Cream, liquid
+Cream Of Coconut, extra
+Cucumber, extra
+Cumin Seed, spice
+Daiquiri Mix, liquid
+Demerara Sugar, extra
+Dr. Pepper, liquid
+Egg, extra
+Egg White, extra
+Egg Yolk, extra
+Espresso, extra
+Fennel Seeds, spice
+Figs, fruit
+Food Coloring, extra
+Fresca, liquid
+Fresh Lemon Juice, liquid
+Fresh Lime Juice, liquid
+Fruit, fruit
+Fruit Juice, liquid
+Fruit Punch, liquid
+Ginger, spice
+Ginger Ale, liquid
+Ginger Beer, liquid
+Ginger Syrup, syrup
+Glycerine, extra
+Grape Juice, liquid
+Grape Soda, liquid
+Grapefruit Juice, liquid
+Grapes, fruit
+Guava Juice, liquid
+Half-and-Half, liquid
+Heavy Cream, liquid
+Honey, extra
+Honey Syrup, syrup
+Hot Chocolate, extra
+Hot Sauce, extra
+Ice, extra
+Iced Tea, extra
+Irish Cream, liquid
+Jello, extra
+Kiwi, fruit
+Kool-Aid, liquid
+Lavender, spice
+Lemon, fruit
+Lemon Juice, liquid
+Lemon Peel, fruit
+Lemon-Lime Soda, liquid
+Lemonade, liquid
+Licorice Root, spice
+Light Cream, liquid
+Lime, fruit
+Lime Juice, liquid
+Lime Peel, fruit
+Limeade, liquid
+Mango, fruit
+Maple Syrup, syrup
+Maraschino Cherry, fruit
+Marjoram Leaves, spice
+Marshmallows, extra
+Milk, liquid
+Mini-Snickers Bars, extra
+Mint, spice
+Mint Syrup, syrup
+Mountain Dew, liquid
+Nutmeg, spice
+Olive, extra
+Olive Brine, extra
+Orange, fruit
+Orange Bitters, bitters
+Orange Juice, liquid
+Orange Peel, fruit
+Orange Spiral, fruit
+Oreo Cookie, extra
+Orgeat Syrup, syrup
+Papaya, fruit
+Passion Fruit Juice, liquid
+Passion Fruit Syrup, syrup
+Peach Bitters, bitters
+Peach Nectar, liquid
+Pepper, spice
+Peppermint Extract, extra
+Pepsi Cola, liquid
+Peychaud Bitters, bitters
+Pina Colada Mix, liquid
+Pineapple, fruit
+Pineapple Juice, liquid
+Pineapple Syrup, syrup
+Pink Lemonade, liquid
+Pomegranate Juice, liquid
+Powdered Sugar, extra
+Raisins, fruit
+Raspberry Syrup, syrup
+Red Chili Flakes, spice
+Root Beer, liquid
+Rosemary, spice
+Rosemary Syrup, syrup
+Salt, spice
+Salted Chocolate, extra
+Sarsaparilla, liquid
+Sherbet, extra
+Sirup Of Roses, extra
+Soda Water, liquid
+Sour Mix, liquid
+Soy Sauce, extra
+Sprite, liquid
+Strawberries, fruit
+Sugar, extra
+Sugar Syrup, syrup
+Sweet And Sour, extra
+Tabasco Sauce, extra
+Tea, extra
+Thyme, spice
+Tomato Juice, liquid
+Tonic Water, liquid
+Tropicana, liquid
+Vanilla, extra
+Vanilla Extract, extra
+Vanilla Ice-Cream, liquid
+Vanilla Syrup, syrup
+Water, extra
+Watermelon, fruit
+Whipped Cream, liquid
+Whipping Cream, liquid
+Worcestershire Sauce, extra
+Wormwood, spice
+Yoghurt, liquid
+Zima, liquid

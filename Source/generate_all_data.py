@@ -19,7 +19,7 @@ class Category:
 
 
 def sanitize(s) -> str:
-    # handle latin chars
+    """Sanitize every ingredient value by Capitializing between spaces and 1st of dashes"""
     i = list()
     for w in s.split():
         if "-" in w:
@@ -55,10 +55,21 @@ def parse_ingredients(obj) -> dict:
 
 
 def parse_categories(cat, backend_table, other_cat) -> set:
+    """We assume 'other' is definitive, as we've already set a 'type':
+        1) liquid
+        2) fruit
+        3) syrup
+        4) spice
+        5) bitters
+        6) extra
+    """
     ingredient_set, booze_set = set(), set()
-    for obj in backend_table: [ingredient_set.add(k) for k,v in obj['ingredients'].items()]
+    list_of_other = [i[0] for i in other_cat]
+    # Set full list to compare booze to other
+    for obj in backend_table:
+        [ingredient_set.add(k) for k,v in obj['ingredients'].items()]
     for i in sorted(ingredient_set):
-        if i not in other_cat: booze_set.add(i)
+        if i not in list_of_other: booze_set.add(i)
     # Assume we know OTHER category better
     cat.write(booze_set, "categories/booze.json")
     return booze_set
@@ -105,13 +116,15 @@ def main():
 
     # This part has to be manually inspected every time we update Database w/new API info
     cat = Category()
-    other_cat = cat.read("categories/other.json")
+    other_cat = cat.read("categories/other_with_types.json")
     booze_set = parse_categories(cat, backend_table, other_cat)
 
     # Write backend Sql file
     source = ["  ('"+x+"')," for x in booze_set]
     f.write("sql", "booze.sql", sorted(source))
-    source = ["  ('"+x+"')," for x in other_cat]
+    # ('milk' (select id from drink_other_cats where name = 'liquid')),
+    source = ["  ('"+x[0]+"', (select id from drink_other_cats where name = '"+x[1]+"'))," for x in other_cat]
+    #source = ["  ('"+x+"')," for x in other_cat]
     f.write("sql", "other.sql", sorted(source))
 
     # Finally, write data for main table
