@@ -1,7 +1,7 @@
 [
     [
         "7-up",
-        "liquid"
+        "soda/juice"
     ],
     [
         "Agave Syrup",
@@ -41,11 +41,11 @@
     ],
     [
         "Apple Cider",
-        "liquid"
+        "soda/juice"
     ],
     [
         "Apple Juice",
-        "liquid"
+        "soda/juice"
     ],
     [
         "Apricot",
@@ -53,7 +53,7 @@
     ],
     [
         "Apricot Nectar",
-        "liquid"
+        "soda/juice"
     ],
     [
         "Banana",
@@ -121,11 +121,11 @@
     ],
     [
         "Carbonated Soft Drink",
-        "liquid"
+        "soda/juice"
     ],
     [
         "Carbonated Water",
-        "liquid"
+        "soda/juice"
     ],
     [
         "Cardamom",
@@ -153,7 +153,7 @@
     ],
     [
         "Cherry Juice",
-        "liquid"
+        "soda/juice"
     ],
     [
         "Chocolate",
@@ -161,11 +161,11 @@
     ],
     [
         "Chocolate Ice-cream",
-        "liquid"
+        "dairy"
     ],
     [
         "Chocolate Milk",
-        "liquid"
+        "dairy"
     ],
     [
         "Chocolate Sauce",
@@ -185,11 +185,11 @@
     ],
     [
         "Club Soda",
-        "liquid"
+        "soda/juice"
     ],
     [
         "Coca-cola",
-        "liquid"
+        "soda/juice"
     ],
     [
         "Cocoa Powder",
@@ -197,7 +197,7 @@
     ],
     [
         "Coconut Milk",
-        "liquid"
+        "dairy"
     ],
     [
         "Coconut Syrup",
@@ -209,7 +209,7 @@
     ],
     [
         "Condensed Milk",
-        "liquid"
+        "dairy"
     ],
     [
         "Coriander",
@@ -229,11 +229,11 @@
     ],
     [
         "Cranberry Juice",
-        "liquid"
+        "soda/juice"
     ],
     [
         "Cream",
-        "liquid"
+        "dairy"
     ],
     [
         "Cream Of Coconut",
@@ -249,7 +249,7 @@
     ],
     [
         "Daiquiri Mix",
-        "liquid"
+        "soda/juice"
     ],
     [
         "Demerara Sugar",
@@ -257,7 +257,7 @@
     ],
     [
         "Dr. Pepper",
-        "liquid"
+        "soda/juice"
     ],
     [
         "Egg",
@@ -289,15 +289,15 @@
     ],
     [
         "Fresca",
-        "liquid"
+        "soda/juice"
     ],
     [
         "Fresh Lemon Juice",
-        "liquid"
+        "soda/juice"
     ],
     [
         "Fresh Lime Juice",
-        "liquid"
+        "soda/juice"
     ],
     [
         "Fruit",
@@ -305,11 +305,11 @@
     ],
     [
         "Fruit Juice",
-        "liquid"
+        "soda/juice"
     ],
     [
         "Fruit Punch",
-        "liquid"
+        "soda/juice"
     ],
     [
         "Ginger",
@@ -317,11 +317,11 @@
     ],
     [
         "Ginger Ale",
-        "liquid"
+        "soda/juice"
     ],
     [
         "Ginger Beer",
-        "liquid"
+        "soda/juice"
     ],
     [
         "Ginger Syrup",
@@ -333,15 +333,15 @@
     ],
     [
         "Grape Juice",
-        "liquid"
+        "soda/juice"
     ],
     [
         "Grape Soda",
-        "liquid"
+        "soda/juice"
     ],
     [
         "Grapefruit Juice",
-        "liquid"
+        "soda/juice"
     ],
     [
         "Grapes",
@@ -349,15 +349,15 @@
     ],
     [
         "Guava Juice",
-        "liquid"
+        "soda/juice"
     ],
     [
         "Half-and-half",
-        "liquid"
+        "dairy"
     ],
     [
         "Heavy Cream",
-        "liquid"
+        "dairy"
     ],
     [
         "Honey",
@@ -385,7 +385,7 @@
     ],
     [
         "Irish Cream",
-        "liquid"
+        "dairy"
     ],
     [
         "Jello",
@@ -397,7 +397,7 @@
     ],
     [
         "Kool-aid",
-        "liquid"
+        "soda/juice"
     ],
     [
         "Lavender",
@@ -409,7 +409,7 @@
     ],
     [
         "Lemon Juice",
-        "liquid"
+        "soda/juice"
     ],
     [
         "Lemon Peel",
@@ -417,11 +417,11 @@
     ],
     [
         "Lemon-lime Soda",
-        "liquid"
+        "soda/juice"
     ],
     [
         "Lemonade",
-        "liquid"
+        "soda/juice"
     ],
     [
         "Licorice Root",
@@ -429,7 +429,7 @@
     ],
     [
         "Light Cream",
-        "liquid"
+        "dairy"
     ],
     [
         "Lime",
@@ -437,7 +437,7 @@
     ],
     [
         "Lime Juice",
-        "liquid"
+        "soda/juice"
     ],
     [
         "Lime Peel",
@@ -445,7 +445,7 @@
     ],
     [
         "Limeade",
-        "liquid"
+        "soda/juice"
     ],
     [
         "Mango",
@@ -469,7 +469,7 @@
     ],
     [
         "Milk",
-        "liquid"
+        "dairy"
     ],
     [
         "Mini-snickers Bars",
@@ -485,7 +485,7 @@
     ],
     [
         "Mountain Dew",
-        "liquid"
+        "soda/juice"
     ],
     [
         "Nutmeg",
@@ -509,7 +509,7 @@
     ],
     [
         "Orange Juice",
-        "liquid"
+        "soda/juice"
     ],
     [
         "Orange Peel",
@@ -533,7 +533,7 @@
     ],
     [
         "Passion Fruit Juice",
-        "liquid"
+        "soda/juice"
     ],
     [
         "Passion Fruit Syrup",
@@ -545,7 +545,7 @@
     ],
     [
         "Peach Nectar",
-        "liquid"
+        "soda/juice"
     ],
     [
         "Pepper",
@@ -557,7 +557,7 @@
     ],
     [
         "Pepsi Cola",
-        "liquid"
+        "soda/juice"
     ],
     [
         "Peychaud Bitters",
@@ -565,7 +565,7 @@
     ],
     [
         "Pina Colada Mix",
-        "liquid"
+        "soda/juice"
     ],
     [
         "Pineapple",
@@ -573,7 +573,7 @@
     ],
     [
         "Pineapple Juice",
-        "liquid"
+        "soda/juice"
     ],
     [
         "Pineapple Syrup",
@@ -581,11 +581,11 @@
     ],
     [
         "Pink Lemonade",
-        "liquid"
+        "soda/juice"
     ],
     [
         "Pomegranate Juice",
-        "liquid"
+        "soda/juice"
     ],
     [
         "Powdered Sugar",
@@ -605,7 +605,7 @@
     ],
     [
         "Root Beer",
-        "liquid"
+        "soda/juice"
     ],
     [
         "Rosemary",
@@ -625,7 +625,7 @@
     ],
     [
         "Sarsaparilla",
-        "liquid"
+        "soda/juice"
     ],
     [
         "Sherbet",
@@ -637,11 +637,11 @@
     ],
     [
         "Soda Water",
-        "liquid"
+        "soda/juice"
     ],
     [
         "Sour Mix",
-        "liquid"
+        "soda/juice"
     ],
     [
         "Soy Sauce",
@@ -649,7 +649,7 @@
     ],
     [
         "Sprite",
-        "liquid"
+        "soda/juice"
     ],
     [
         "Strawberries",
@@ -681,15 +681,15 @@
     ],
     [
         "Tomato Juice",
-        "liquid"
+        "soda/juice"
     ],
     [
         "Tonic Water",
-        "liquid"
+        "soda/juice"
     ],
     [
         "Tropicana",
-        "liquid"
+        "soda/juice"
     ],
     [
         "Vanilla",
@@ -701,7 +701,7 @@
     ],
     [
         "Vanilla Ice-cream",
-        "liquid"
+        "dairy"
     ],
     [
         "Vanilla Syrup",
@@ -717,11 +717,11 @@
     ],
     [
         "Whipped Cream",
-        "liquid"
+        "dairy"
     ],
     [
         "Whipping Cream",
-        "liquid"
+        "dairy"
     ],
     [
         "Worcestershire Sauce",
@@ -733,10 +733,10 @@
     ],
     [
         "Yoghurt",
-        "liquid"
+        "dairy"
     ],
     [
         "Zima",
-        "liquid"
+        "soda/juice"
     ]
 ]

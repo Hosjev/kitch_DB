@@ -154,4 +154,4 @@
   ('Wild Turkey'),
   ('Wine'),
   ('Yellow Chartreuse'),
-  ('Yukon Jack');
+  ('Yukon Jack'),
