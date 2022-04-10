@@ -17,8 +17,11 @@ class Category:
             fd.write(json.dumps(list(sorted(content)), indent=4))
 
 
+def sanitize_word(s) -> str:
+    return s.replace("'", "''")
 
-def sanitize(s) -> str:
+
+def sanitize_ingredient(s) -> str:
     """Sanitize every ingredient value by Capitializing between spaces and 1st of dashes"""
     i = list()
     for w in s.split():
@@ -34,9 +37,14 @@ def sanitize(s) -> str:
 
 
 def sanitize_instructions(obj):
-    """Remove all return characters and double quotes"""
+    """
+    Remove all return characters and double quotes.
+    For Postgres, insert single quote in front of single quote.
+    """
     obj = " ".join(obj.split())
     obj = " ".join(obj.split('"'))
+    obj = obj.replace("'", "''")
+    obj = obj.replace("\\", "")
     return obj
 
 
@@ -45,7 +53,7 @@ def parse_ingredients(obj) -> dict:
     ingredient_obj = {}
     for k,v in obj.items():
         if v and k.__contains__('Ingredient'):
-            string = sanitize(v)
+            string = sanitize_ingredient(v)
             measure = obj[k.replace("Ingredient", "Measure")]
             if not measure:
                 ingredient_obj[string] = "to Taste"
@@ -106,9 +114,9 @@ def main():
             for obj in contents['drinks']:
                 out_obj = {}
                 out_obj['drink_id'] = obj['idDrink']
-                out_obj['name'] = obj['strDrink']
-                out_obj['type'] = sanitize(obj['strCategory'])
-                out_obj['container'] = sanitize(obj['strGlass'])
+                out_obj['name'] = sanitize_word(obj['strDrink'])
+                out_obj['type'] = sanitize_word(obj['strCategory'])
+                out_obj['container'] = sanitize_word(obj['strGlass'])
                 out_obj['image'] = os.path.basename(obj['strDrinkThumb'])
                 out_obj['instructions'] = sanitize_instructions(obj['strInstructions'])
                 out_obj['ingredients'] = parse_ingredients(obj)
@@ -134,7 +142,7 @@ def main():
         for k,v in obj.items():
             if k == "drink_id": source.append(f"    {v},")
             elif k == "ingredients": source.append(f"    '{json.dumps(v, ensure_ascii=False)}'")
-            else: source.append(f"    \"{v}\",")
+            else: source.append(f"    '{v}',")
         source.append("  ),")
     f.write("sql", "backend_table.sql", source)
 

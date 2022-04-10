@@ -8,14 +8,13 @@ Table be_drinks
  -----------------------------------------------------------------------------------------------------------------
   uuid   | integer | varchar(255) | varchar(100) | varchar(100) | text         | varchar(255) | json | timestamp
   
-  uuid uuid NOT NULL PRIMARY KEY,
   d_id integer NOT NULL,
   name varchar(100) NOT NULL,
   type varchar(100) NOT NULL,
   container varchar(100),
   instructions text NOT NULL,
   image varchar(255) NOT NULL,
-  data json NOT NULL,
+  ingredients json NOT NULL,
   created_at date DEFAULT CURRENT_TIMESTAMP  
 
 Queries to perform
@@ -23,9 +22,9 @@ Queries to perform
 select * from be_drinks
   where (data)::jsonb ? ALL(ARRAY['', ''...]);
 # select data to display for each
-select name, type, instructions, image, data
+select id, name, type, instructions, image, ingredients
   from be_drinks
-  where (data)::jsonb ? ALL(ARRAY['', ''...]);
+  where (ingredients)::jsonb ? ALL(ARRAY['', ''...]);
 
 # image insertion into table
 insert into be_drinks (d_id, name, combos, image) values (17263, 'Highball', '{"coke": "1 oz"}', bytea_import('/home/hosjev/hosted-sites/kitch_database/Source/images/zvsre31572902738.jpg'));
@@ -72,6 +71,12 @@ INSERT INTO be_drinks VALUES(
   'zvsre31572902738.jpg',
   '{"gin": "1 oz", "lemon": "slice", "vodka": "1 oz"}');
 
+# query for ingredients
+SELECT doc.name as category, group_concat(do.id||","||do.name,";") collection
+ FROM drink_other do
+ INNER JOIN drink_other_cats doc ON doc.id = do.cat_id
+ GROUP BY category
+ ORDER BY doc.priority
 
 # query to run
 SELECT d.* FROM be_drinks d, JSON_EACH(ingredients) ing
